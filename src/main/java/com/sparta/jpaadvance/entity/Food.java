@@ -18,6 +18,7 @@ public class Food {
     private String name;
     private double price;
 
-    @OneToMany(mappedBy = "food")
-    private List<Order> orderList = new ArrayList<>();
+    @ManyToOne // FetchType.EAGER(즉시 로딩) -> One 정보를 가지고 와야 함
+    @JoinColumn(name = "user_id")
+    private User user;
 }

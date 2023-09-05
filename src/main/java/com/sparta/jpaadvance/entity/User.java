@@ -17,6 +17,6 @@ public class User {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "user")
-    private List<Order> orderList = new ArrayList<>();
+    @OneToMany(mappedBy = "user") // FetchType.LAZY(지연 로딩) -> Many 정보를 가지고 와야함
+    private List<Food> foodList = new ArrayList<>();
 }
